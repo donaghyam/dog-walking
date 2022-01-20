@@ -1,4 +1,5 @@
-import { getPets, getWalkers } from "./database.js"
+import { CityList } from "./CityList.js"
+import { getPets, getWalkerCities, getWalkers } from "./database.js"
 
 // Get copy of state for use in this module
 const pets = getPets()
@@ -37,4 +38,6 @@ export const Assignments = () => {
 
     return assignmentHTML
 }
+
+
 

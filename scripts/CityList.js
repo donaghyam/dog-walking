@@ -15,3 +15,20 @@ export const CityList = () => {
 
     return citiesHTML
 }
+
+// Define a function that builds a string of city names. Needs a paramter for assignments array.
+const assignedCityNames = (assignments) => {
+    // Define an empty string that will get appended with matching cities
+    let citiesString = ""
+    // Iterate the array of assignment objects
+    for (const assignment of assignments) {
+        // For each assignment, iterate the cities array to find the match
+        for (const city of cities) {
+            if (city.id === assignment.cityId)
+            // Add the name of the matching city to the array of city names
+                citiesString = `${citiesString} and ${city.name}`
+        }
+    }
+    // After the loop is done, return the string
+    return citiesString
+}
