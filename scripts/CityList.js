@@ -17,7 +17,7 @@ export const CityList = () => {
 }
 
 // Define a function that builds a string of city names. Needs a paramter for assignments array.
-const assignedCityNames = (assignments) => {
+export const assignedCityNames = (assignments) => {
     // Define an empty string that will get appended with matching cities
     let citiesString = ""
     // Iterate the array of assignment objects
