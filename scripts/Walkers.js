@@ -1,11 +1,14 @@
 import { getCities, getWalkers } from "./database.js"
 import { assignedCityNames } from "./CityList.js"
 import { getWalkerCities } from "./database.js"
+import { cityNameAssignment } from "./Assignments.js"
+
 
 // define variable to hold array of walkers
 const walkers = getWalkers()
 // define variable to hold array of walkerCitites
 const walkerCities = getWalkerCities()
+const cityList = getCities()
 
 document.addEventListener(
     "click",
@@ -16,9 +19,9 @@ document.addEventListener(
 
             for (const walker of walkers) {
                 if (walker.id === parseInt(walkerId)) {
-                    const assignments = filterWalkerCitiesByWalker(walker)
-                    const cities = assignedCityNames(assignments)
-                    window.alert(`${walker.name} services ${cities}`)
+                    const city = filterWalkerCitiesByWalker(walker) // function takes in walker parameter. returns city object
+                    const cityName = cityNameAssignment(city)
+                    window.alert(`${walker.name} services ${cityName}`)
                 }
             }
         }
@@ -45,9 +48,10 @@ export const filterWalkerCitiesByWalker = (walker) => {
         // Check if the primary key of the walker equals the foreign key on the assignment
         if (walker.id === city.walkerId) {
             // If it does, add the current object to the array of assignments
-            walkerCitiesAssignment.push(city)
+            walkerCitiesAssignment.push(city.cityId)
         }
     }
     return walkerCitiesAssignment
 }
+
 

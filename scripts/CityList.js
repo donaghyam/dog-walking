@@ -26,7 +26,7 @@ export const assignedCityNames = (assignments) => {
         for (const city of cities) {
             if (city.id === assignment.cityId)
             // Add the name of the matching city to the array of city names
-                citiesString = `${city.name} and ${assignment}`
+            citiesString = `${city.name} and ${assignment}`
         }
     }
     // After the loop is done, return the string

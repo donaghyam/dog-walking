@@ -128,7 +128,7 @@ export const getPets = () => {
 }
 
  export const getCities = () => {
-    return database.cities.map(name => ({...name}))
+    return database.cities.map(city => ({...city}))
 }
 
 export const getWalkerCities = () => {
